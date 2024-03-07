@@ -5,7 +5,7 @@ DocumentType =
 "recommendation-annex" | "focus-group" | "implementers-guide" | "technical-paper" | "technical-report" | "joint-itu-iso-iec" | "resolution" | "service-publication" | "handbook" | "question"
 
 editorialgroup = element editorialgroup {
-  bureau,
+  (bureau | sector),
   group?,
   subgroup?,
   workgroup?
@@ -60,6 +60,7 @@ approvalstage = element approvalstage {
 }
 
 bureau = element bureau { "T" | "D" | "R" }
+sector = element sector { text }
 
 group = element group { ItuGroup }
 
