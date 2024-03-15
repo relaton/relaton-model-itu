@@ -88,8 +88,8 @@ groupperiodend = element end { xsd:gYear }
 workgroup = element workgroup { ItuGroup }
 
 question = element question {
-        attribute id { text },
-        text?
+        element identifier { text },
+        element name { text }?
 }
 
 
