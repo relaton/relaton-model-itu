@@ -22,7 +22,7 @@ structuredidentifier = element structuredidentifier {
 
 BibDataExtensionType =
   attribute schema-version { text }?,
-    doctype?, docsubtype?, editorialgroup, ics*, recommendationstatus?, ipnoticereceived?,
+    doctype?, docsubtype?, editorialgroup+, question*, ics*, recommendationstatus?, ipnoticereceived?,
     meeting?, meeting-place?, meeting-date?, intended-type?, ext_source?,
     structuredidentifier?
 }
@@ -67,10 +67,13 @@ group = element group { ItuGroup }
 subgroup = element subgroup { ItuGroup }
 
 ItuGroup =
-  attribute type { "tsag" | "study-group" | "work-group" }?,
+  attribute type { ItuGroupType }?,
   tname,
   groupacronym?,
   groupperiod?
+
+ItuGroupType =  "tsag" | "study-group" | "focus-group" | "adhoc-group" | "correspondence-group" | "joint-coordination-activity" | "working-party" |
+ "working-group" | "rapporteur-group" | "intersector-rapporteur-group" | "regional-group" 
 
 groupacronym = element acronym { text }
 
@@ -83,5 +86,10 @@ groupperiodstart = element start { xsd:gYear }
 groupperiodend = element end { xsd:gYear }
 
 workgroup = element workgroup { ItuGroup }
+
+question = element question {
+        attribute id { text },
+        text?
+}
 
 
