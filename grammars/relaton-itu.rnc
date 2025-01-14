@@ -2,7 +2,7 @@ include "biblio-standoc.rnc" {
 
 DocumentType =
 "recommendation" | "recommendation-supplement" | "recommendation-amendment" | "recommendation-corrigendum" | "recommendation-errata" |
-"recommendation-annex" | "focus-group" | "implementers-guide" | "technical-paper" | "technical-report" | "joint-itu-iso-iec" | "resolution" | "service-publication" | "handbook" | "question"
+"recommendation-annex" | "focus-group" | "implementers-guide" | "technical-paper" | "technical-report" | "joint-itu-iso-iec" | "resolution" | "service-publication" | "handbook" | "question" | "contribution"
 
 editorialgroup = element editorialgroup {
   (bureau | sector),
