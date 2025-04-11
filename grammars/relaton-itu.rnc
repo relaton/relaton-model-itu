@@ -37,7 +37,6 @@ BibDataExtensionType &=
         intended-type?, 
         ## Source for this document (for technical reports, technical papers, implementers guides) 
         ext_source?
-    structuredidentifier?
 }
 
 meeting = element meeting {
