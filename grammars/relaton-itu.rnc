@@ -20,10 +20,23 @@ structuredidentifier = element structuredidentifier {
 }
 
 
-BibDataExtensionType =
-  attribute schema-version { text }?,
-    doctype?, docsubtype?, flavor, editorialgroup+, question*, ics*, recommendationstatus?, ipnoticereceived?,
-    meeting?, meeting-place?, meeting-date?, intended-type?, ext_source?,
+BibDataExtensionType &=
+        ## The Questions that the document addresses.  A document can address multiple questions
+        question*, 
+        ## Status of approval of Recommendation status
+        recommendationstatus?, 
+        ## ITU has received a notice of intellectual property, protected by patents, which may be required to implement this Recommendation
+        ipnoticereceived?,
+        ## Name of meeting that generated this document (for resolutions, technical reports, technical papers, implementers guides) 
+        meeting?, 
+        ## Place of meeting that generated this document (for resolutions, technical reports, technical papers, implementers guides)
+        meeting-place?, 
+        ## Date of meeting that generated this document (for resolutions, technical reports, technical papers, implementers guides)
+        meeting-date?, 
+        ## Intended type for this document (for technical reports) (`R`, `C`, `TD`) 
+        intended-type?, 
+        ## Source for this document (for technical reports, technical papers, implementers guides) 
+        ext_source?
     structuredidentifier?
 }
 
