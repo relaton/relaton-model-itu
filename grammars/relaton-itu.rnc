@@ -19,6 +19,7 @@ structuredidentifier = element structuredidentifier {
   element corrigendum { xsd:int }?
 }
 
+}
 
 BibDataExtensionType &=
         ## The Questions that the document addresses.  A document can address multiple questions
@@ -37,7 +38,6 @@ BibDataExtensionType &=
         intended-type?, 
         ## Source for this document (for technical reports, technical papers, implementers guides) 
         ext_source?
-}
 
 meeting = element meeting {
    attribute acronym { text }?,
